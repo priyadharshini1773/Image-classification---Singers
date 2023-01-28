@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Person Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">Vocalist Image Classifier</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+        <div class="col card-wrapper" data-player="alec_benjamin">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/alec.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Alec Benjamin</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>            
+            <div class="col card-wrapper" data-player="ar_rahman">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/arrahman.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">AR Rahman</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>            
+            <div class="col card-wrapper" data-player="illayaraja">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/illayaraja.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">Illayaraja</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>          
+
+            <div class="col card-wrapper" data-player="shreya_ghoshal">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/shreya.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Shreya Ghoshal</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>      
+
+            <div class="col card-wrapper" data-player="taylor_swift">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/taylor.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Taylor Swift</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Vocalist</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Alec Benjamin</td>
+                            <td id="score_alec_benjamin"></td>
+                        </tr>
+                        <tr>
+                            <td>AR Rahman</td>
+                            <td id="score_ar_rahman"></td>
+                        </tr>
+                        <tr>
+                            <td>Illayaraja</td>
+                            <td id="score_illayaraja"></td>
+                        </tr>
+                        <tr>
+                            <td>Shreya ghoshal</td>
+                            <td id="score_shreya_ghoshal"></td>
+                        </tr>
+                        <tr>
+                            <td>Taylor swift</td>
+                            <td id="score_taylor_swift"></td>
+                        </tr>
+                </table>
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
