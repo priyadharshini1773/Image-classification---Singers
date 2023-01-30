@@ -1,0 +1,6 @@
+[[redirects]]
+from = "/*"
+to = "UI/index.html"
+status = 200
+[requires]
+python_version = '3.9'
