@@ -11,8 +11,8 @@ This is a web app which can be used to classify the famous singers image.
 
 Here is the folder structure,
 
-*UI : This contains ui website code
-*server: Python flask server
-*model: Contains python notebook for model building.
+UI : This contains ui website code
+server: Python flask server
+model: Contains python notebook for model building.
 
 
