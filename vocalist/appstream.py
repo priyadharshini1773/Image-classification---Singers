@@ -2,6 +2,8 @@ import streamlit as st
 
 # Streamlit app title
 st.title("Vocalist Image Classifier")
+with open('app.css') as f:
+    st.markdown(),f'<style>{f.read()}</style>,unsafe_allow_html=True>
 
 # Define the images and corresponding labels
 images = {
