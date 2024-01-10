@@ -1,35 +1,43 @@
 import streamlit as st
 
-def main():
-    st.set_page_config(
-        page_title="Sports Person Classifier",
-        page_icon=":athletic_shoe:",
-        layout="wide"
-    )
+# Streamlit app title
+st.title("Vocalist Image Classifier")
 
-    st.title("Harry Potter Characters Classifier")
+# Define the images and corresponding labels
+images = {
+    "Alec Benjamin": "./images/alec.jpg",
+    "AR Rahman": "./images/arrahman.jpg",
+    "Illayaraja": "./images/illayaraja.jpg",
+    "Shreya Ghoshal": "./images/shreya.jpg",
+    "Taylor Swift": "./images/taylor.jpg"
+}
 
-    st.markdown(
-        """
-        Welcome to the Harry Potter Characters Classifier! Upload an image, and the classifier will predict the character.
-        """
-    )
+# Display the cards using Streamlit columns
+col1, col2, col3, col4, col5 = st.beta_columns(5)
 
-    # Your Dropzone code
-    uploaded_file = st.file_uploader("Choose an image...", type="jpg")
+# Iterate through images and display in columns
+for artist, image_path in images.items():
+    with eval(f"col{len(artist.split()[0]) + 1}"):
+        st.image(image_path, caption=artist, use_column_width=True)
+        st.write(f"**{artist}**")
 
-    if uploaded_file is not None:
-        st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
-        st.write("")
-        st.write("Classifying...")
+# Upload file and classify
+uploaded_file = st.file_uploader("Upload an image for classification", type=["jpg", "png"])
 
-        # Add your classification logic here
+if uploaded_file:
+    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    st.write("Classify Button Placeholder")  # Replace with your classification logic
 
-        st.success("Classification successful!")
-        display_results()  # Define this function to display the classification results
+# Display classification results table
+st.write("## Classification Results")
 
-    st.sidebar.header("Probability Scores")
-    display_probability_scores()  # Define this function to display the probability scores in the sidebar
+# Create a table with artist names and corresponding probability scores
+table_data = {
+    "Vocalist": ["Alec Benjamin", "AR Rahman", "Illayaraja", "Shreya Ghoshal", "Taylor Swift"],
+    "Probability Score": [0.0, 0.0, 0.0, 0.0, 0.0]  # Replace with actual probability scores
+}
 
-if __name__ == "__main__":
-    main()
+st.table(table_data)
+
+# Display error message
+st.error("Can't classify image. Classifier was not able to detect face and two eyes properly")
