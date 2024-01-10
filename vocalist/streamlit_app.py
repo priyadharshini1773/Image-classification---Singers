@@ -4,8 +4,7 @@ import streamlit as st
 st.title("Vocalist Image Classifier")
 
 # Read and render the external CSS file
-with open('app.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 
 # Rest of your Streamlit app code
 # ...
